@@ -30,6 +30,13 @@ function getSearchResponse(identifiers?: string[]) {
                     sources: ['OSF', 'OSF Registries'],
                     subjects: [],
                     subject_synonyms: [],
+                    open_practice_badges: {
+                        data: true,
+                        papers: true,
+                        analytic_code: false,
+                        materials: false,
+                        supplements: false,
+                    },
                     lists: {
                         contributors: [{
                             id: '6402D-242-421',
@@ -83,6 +90,13 @@ module('Registries | Unit | Service | share-search', hooks => {
         assert.equal(registrations[0].tags[0], '&');
         assert.equal(registrations[0].contributors[0].name, 'Graham > Berlin');
         assert.equal(registrations[0].contributors[1].name, 'Nicole < Grant');
+        assert.deepEqual(registrations[0].openPracticeBadges, {
+            data: true,
+            papers: true,
+            analytic_code: false,
+            materials: false,
+            supplements: false,
+        });
     });
 
     test('recognizes all OSF source envs', function(this: TestContext, assert) {
