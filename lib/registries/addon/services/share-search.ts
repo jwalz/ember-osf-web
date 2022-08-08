@@ -86,7 +86,7 @@ export interface ShareContributor {
     orderCited: number;
 }
 
-export interface OpenPracticeBadges {
+export interface OpenResourceTypes {
     data: boolean;
     materials: boolean;
     analytic_code: boolean;
@@ -110,7 +110,7 @@ export interface ShareRegistration {
     tags: string[];
     title: string;
     withdrawn: boolean;
-    openPracticeBadges?: OpenPracticeBadges;
+    openPracticeBadges?: OpenResourceTypes;
 }
 
 export interface SourceDescriptor {
@@ -242,7 +242,7 @@ export default class ShareSearch extends Search {
                 datePublished: r._source.date_published ? new Date(r._source.date_published) : undefined,
                 tags: r._source.tags.map(unescapeXMLEntities),
                 withdrawn: r._source.withdrawn,
-                openPracticeBadges: r._source.open_practice_badges,
+                openResourceTypes: r._source.extra.osf_related_resource_types,
             };
         });
     }
