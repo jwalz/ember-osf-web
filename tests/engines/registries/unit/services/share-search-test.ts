@@ -90,7 +90,7 @@ module('Registries | Unit | Service | share-search', hooks => {
         assert.equal(registrations[0].tags[0], '&');
         assert.equal(registrations[0].contributors[0].name, 'Graham > Berlin');
         assert.equal(registrations[0].contributors[1].name, 'Nicole < Grant');
-        assert.deepEqual(registrations[0].openPracticeBadges, {
+        assert.deepEqual(registrations[0].openResourceTypes, {
             data: true,
             papers: true,
             analytic_code: false,
