@@ -30,14 +30,12 @@ function getSearchResponse(identifiers?: string[]) {
                     sources: ['OSF', 'OSF Registries'],
                     subjects: [],
                     subject_synonyms: [],
-					extra: {
-						osf_open_resource_types: {
+					osf_related_resource_types: {
 							data: true,
 							papers: true,
 							analytic_code: false,
 							materials: false,
 							supplements: false,
-						},
                     },
                     lists: {
                         contributors: [{

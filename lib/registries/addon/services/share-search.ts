@@ -242,7 +242,7 @@ export default class ShareSearch extends Search {
                 datePublished: r._source.date_published ? new Date(r._source.date_published) : undefined,
                 tags: r._source.tags.map(unescapeXMLEntities),
                 withdrawn: r._source.withdrawn,
-                openResourceTypes: r._source.extra.osf_related_resource_types,
+                openResourceTypes: r._source.osf_related_resource_types,
             };
         });
     }
